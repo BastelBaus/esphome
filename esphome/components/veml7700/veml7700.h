@@ -64,6 +64,14 @@ enum PSM : uint8_t {
 //
 // VEML7700_CR_ALS_CONF_0 Register (0x00)
 //
+
+// Avoid compile time warning
+// https://stackoverflow.com/questions/41253759/ignoring-note-offset-of-packed-bit-field-without-using-wno-packed-bitfield-co
+// :: In file included from src/esphome/components/veml7700/veml7700.cpp:1:
+// :: src/esphome/components/veml7700/veml7700.h:70:10: note: offset of packed bit-field 'esphome::veml7700::ConfigurationRegister::<unnamed struct>::ALS_IT' has changed in GCC 4.4
+// ::    struct {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpacked-bitfield-compat"
 union ConfigurationRegister {
   uint16_t raw;
   uint8_t raw_bytes[2];
@@ -83,6 +91,7 @@ union ConfigurationRegister {
     bool reserved_15 : 1;        // 0
   } __attribute__((packed));
 };
+#pragma GCC diagnostic pop
 
 //
 // Power Saving Mode: PSM Register (0x03)
