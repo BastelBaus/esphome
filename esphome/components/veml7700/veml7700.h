@@ -74,7 +74,7 @@ enum PSM : uint8_t {
 // :: src/esphome/components/veml7700/veml7700.h:70:10: note: offset of packed bit-field 'esphome::veml7700::ConfigurationRegister::<unnamed struct>::ALS_IT' has changed in GCC 4.4
 // ::    struct {
 #pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wpacked-bitfield-compat"
+#pragma GCC diagnostic ignored "-Wno-packed-bitfield-compat"
 union ConfigurationRegister {
   uint16_t raw;
   uint8_t raw_bytes[2];
