@@ -65,6 +65,9 @@ enum PSM : uint8_t {
 // VEML7700_CR_ALS_CONF_0 Register (0x00)
 //
 
+
+
+
 // Avoid compile time warning
 // https://stackoverflow.com/questions/41253759/ignoring-note-offset-of-packed-bit-field-without-using-wno-packed-bitfield-co
 // :: In file included from src/esphome/components/veml7700/veml7700.cpp:1:
